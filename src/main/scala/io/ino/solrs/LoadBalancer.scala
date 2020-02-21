@@ -513,7 +513,10 @@ trait FastestServerLBJmxSupport[F[_]] extends FastestServerLBMBean { self: Faste
   import FastestServerLBJmxSupport._
 
   def initJmx(): Unit = {
-    ManagementFactory.getPlatformMBeanServer.registerMBean(this, ObjName)
+    val bean = ManagementFactory.getPlatformMBeanServer
+    if (!bean.isRegistered(ObjName)) {
+      bean.registerMBean(this, ObjName)
+    }
   }
 
   def shutdownJmx(): Unit = {
