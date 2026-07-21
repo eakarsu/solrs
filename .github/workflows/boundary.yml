@@ -1,0 +1,19 @@
+name: retained-boundary
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: sh scripts/verify-boundary.sh
+      - run: python3 -B -m unittest discover -s tests -v
+      - name: Secret scan
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

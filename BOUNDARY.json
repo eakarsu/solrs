@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 2,
+  "artifactType": "upstream-scala-library",
+  "disposition": "retain-immutable-upstream-reference",
+  "deployableApplication": false,
+  "runtimeAcceptance": "not_applicable",
+  "loginAcceptance": "not_applicable",
+  "upstream": "https://github.com/inoio/solrs",
+  "observedFork": "https://github.com/eakarsu/solrs",
+  "license": "Apache-2.0",
+  "licenseSha256": "23f1ae5d1bd12457f8f59ec11b7c9f47cc6b60bce5e8b62e7b2e397ed66d7b15",
+  "snapshot": {
+    "commit": "bea5ebfb37d5b2efee491830756e7d24d05d3e64",
+    "tree": "20866e33f48c8b7233fd35ab1404d474dd2db017",
+    "commits": 272,
+    "trackedFiles": 194,
+    "trackedBytes": 779554,
+    "declaredVersion": "2.4.2-SNAPSHOT"
+  },
+  "archivedToolchain": {
+    "jdk": "8",
+    "sbt": "1.3.3",
+    "scala": ["2.12.8", "2.13.1"],
+    "solr": "7.7.2"
+  },
+  "legacyReleaseMaterial": {
+    "path": "project/travis-deploy-key.enc",
+    "bytes": 3248,
+    "sha256": "aa20999d9f56b00c8ebca17ba45d20bb6b8d6879d2c9c38e88183bd20141ea98",
+    "useAllowed": false
+  },
+  "retainedSymlink": {
+    "path": "src/test/resources/solr-home/collection2/conf",
+    "target": "../collection1/conf/",
+    "scope": "internal-test-fixture-only"
+  },
+  "allowedOperations": ["inventory", "static-integrity-check", "owner-approved-isolated-build"],
+  "prohibitedOperations": ["deploy-as-application", "claim-as-original-product", "publish-snapshot", "use-legacy-release-key", "connect-shared-solr"],
+  "applicationExtractionRequires": ["separate-repository", "named-owner", "supported-toolchain", "dependency-review", "identity-and-authorization", "configuration-contract", "tests", "release-and-recovery-process"],
+  "unresolved": ["accountable-owner", "supported-version", "update-cadence", "security-patching-owner", "dependency-review", "isolated-build-evidence"]
+}
